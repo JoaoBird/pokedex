@@ -40,7 +40,39 @@ const renderPokemon= async(pokemonResp) =>{
     }
 }
 
+
+buttonPrev.addEventListener("click",()=>
+{
+
+    if(pokemon>1)
+    {
+        pokemon -=1;
+        renderPokemon(pokemon);
+    }
+
+})
+
+buttonNext.addEventListener("click",()=>
+{
+
+    pokemon++;
+    renderPokemon(pokemon);
+
+})
+
+
 renderPokemon(pokemon)
+
+
+form.addEventListener("submit",(evento)=>
+{
+    evento.preventDefault();
+    renderPokemon(input.value.toLowerCase());
+})
+
+
+
+
 
 
 // console.log(pokemonName)
